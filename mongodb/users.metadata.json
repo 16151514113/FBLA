@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"fbla.users"},{"v":2,"key":{"email":1},"name":"email_1","ns":"fbla.users","background":true},{"v":2,"key":{"isAdmin":1},"name":"isAdmin_1","ns":"fbla.users","background":true}]}
