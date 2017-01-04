@@ -1,0 +1,70 @@
+extends ../layouts/default
+block content
+	+coverPhoto(Page)
+	.container(style="margin-top: 60px; padding: 10px;")
+		.col-md-6
+				p
+					| Book a party to enjoy your special day with your closest friends! Choose from our three party packages- cheer, enliven, and inspire! Each party package includes our party hall and our world-famous, oven-baked, triple-layer cake, with different perks for each package! Our catering option is also available for those who love to party hard!
+				br
+				p Standard Party Items:
+				ul(style="font-size: 21px;")
+					li Party hall
+					li Triple-layer cake
+					li Balloons and party décor
+					li Party Coordinator
+					li Special gift for party honoree
+					li Invitations
+		.col-md-6
+			.row
+				.alert.alert-success(role='alert')
+					h4 To book your party, choose a date below!
+			.row
+				form(method="post", action="/party-booking/make-a-party-reservation#content")
+					input(type='hidden', name='action', value='start')
+					.input-group.date(data-provide='datepicker', style="width: 200px", data-date-startDate="1d")
+						input.form-control(type='text', name="date",  data-startDate="1d")
+						.input-group-addon
+							span.glyphicon.glyphicon-th
+					button.btn.btn-default(type="submit") Book Now!
+	.row(style="margin-top: 50px;")
+			.col-sm-3
+				.package-container
+					.package
+						.package-heading
+							h1 Cheer Package
+							img.circle-package-icon(src="http://res.cloudinary.com/fblaexhilarate/image/upload/c_scale,w_300/v1482003085/OHTNL71_yzvb0e.png")
+						.package-contents
+							.alt
+								h3 ✓ 2 Tickets Per Guest For Any Attraction
+							.reg
+								h3 ✓ One Plate of Snacks Per Guest From Snack Bar
+							.alt 
+								h2 Price: $20 Per Guest
+			.col-sm-3
+				.-container
+					.package
+						.package-heading
+							h1 Enliven Package
+							img.circle-package-icon(src="http://res.cloudinary.com/fblaexhilarate/image/upload/c_scale,w_300/v1482003086/3_al5pll.png")
+						.package-contents
+							.alt
+								h3 ✓ 3 Tickets Per Guest For Any Attraction
+							.reg
+								h3 ✓ Two Plates of Snacks Per Guest From Snack Bar
+							.alt 
+								h2 Price: $25 Per Guest
+			.col-sm-3
+				.package-container
+					.package
+						.package-heading
+							h1 Inspire Package
+							img.circle-package-icon(src="http://res.cloudinary.com/fblaexhilarate/image/upload/c_scale,w_300/v1482003086/2_nnpho4.png")
+						.package-contents
+							.alt
+								h3 ✓ 4 Tickets Per Guest For Any Attraction
+							.reg
+								h3 ✓ Custom Hand Selected Meal Prepared by Onsite Chef
+							.alt 
+								h2 Price: $30 Per Guest
+
+					

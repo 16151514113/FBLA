@@ -1,0 +1,14 @@
+extends ../layouts/default
+block content
+	.container-fluid
+		.hero
+			img.hero-image(src="http://res.cloudinary.com/fblaexhilarate/image/upload/v1481686149/attractions_jdrflf.jpg")
+			.hero-content.hero-content-page
+				h1="- Attractions -"
+	.container-fluid
+		div(style="margin-left:auto;margin-right:auto; width: 87%;")
+			each attraction in Attractions.results
+				a(href="/attraction/" + attraction.slug)
+					.image-container.grow(style="float: left; overflow: hidden; background-image: url('" + attraction._.circleImage.fit(350, 350) + "'); width: 350px; height: 350px; border-radius: 175px;" )
+						.h1container(style="background: rgba(120, 135, 120, 0.3); padding: 1px; width: 105%; display: flex; justify-content: center;align-items: center;")
+							h1(style="color: white")= attraction.title

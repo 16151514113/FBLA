@@ -1,0 +1,16 @@
+mixin attractiona(post)
+	.row
+		.big-image-container(class=post.classToApply, style="margin-top: " + post.marginTop + "; z-index:" + post.zIndex)
+			img(id=post.id + "img", src=post._.image.fit(1500,1500)).big-image.animated
+			// create div that slides in content with title and content
+		.slide-in.animated(id=post.id, class=post.classToApply, style=post.leftOrRight + ": 0;" + "bottom:" + post.slideInOffset + "; top:" + post.marginTop)
+			.slide-in-contents
+				.slide-in-title
+					h1= post.title
+				hr(style="border-color: white;")
+				!= post.content
+				+price('Megaband Price:', post.megaBandPrice)
+				+price('Superband Price:', post.superBandPrice)
+				+price('Child Price:', post.childPrice)
+				h4(style="color: white") *Ages 10 and below
+				+price('Adult Price:', post.adultPrice)

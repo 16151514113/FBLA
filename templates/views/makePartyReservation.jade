@@ -1,0 +1,105 @@
+extends ../layouts/default
+block content
+	.container-fluid
+		.hero
+			img.hero-image(src="http://res.cloudinary.com/fblaexhilarate/image/upload/c_scale,w_1500/v1481727738/oruduzzq0xkfr25o0m1x.jpg")
+			.hero-content.hero-content-page
+				h1 - Party Booking -
+	.container
+		if enquirySubmitted
+			.jumbotron.text-center#content
+				h3 Success! We will call/email you to process your reservation and payment, thanks!
+		else
+			.row(style="margin-top: 50px;")
+				+flash-messages(messages)
+				div.alert.alert-info#content You will be called in 1-2 business days to process your payment. 
+			.row(style="margin-top: 50px;")
+				form(method='post').form-horizontal
+					.row(style="margin-top: 50px;")
+							.col-sm-3
+								.package-container
+									.package
+										if p1
+											.package-heading(style="background-color: #e74c3c;") 
+												h3 Cheer Package Is Not Available For This Day
+												img.circle-package-icon(src="http://res.cloudinary.com/fblaexhilarate/image/upload/c_scale,w_300/v1482003085/OHTNL71_yzvb0e.png")
+										else
+											.package-heading
+												h1 Cheer Package
+												img.circle-package-icon(src="http://res.cloudinary.com/fblaexhilarate/image/upload/c_scale,w_300/v1482003085/OHTNL71_yzvb0e.png")
+												label(for="p1")
+													h3 Select This Package
+												input(type="radio", name="packageType", id="p1", value="p1")
+										.package-contents
+											.alt
+												h3 ✓ 2 Tickets Per Guest For Any Attraction
+											.reg
+												h3 ✓ One Plate of Snacks Per Guest from Snack Bar
+											.alt 
+												h2 Price: $20 Per Guest
+							.col-sm-3
+								.-container
+									.package
+										if p2
+											.package-heading(style="background-color: #e74c3c;") 
+												h3 Enliven Package Is Not Available For This Day
+												img.circle-package-icon(src="http://res.cloudinary.com/fblaexhilarate/image/upload/c_scale,w_300/v1482003086/3_al5pll.png")
+										else
+											.package-heading
+												h1 Enliven Package
+												img.circle-package-icon(src="http://res.cloudinary.com/fblaexhilarate/image/upload/c_scale,w_300/v1482003086/3_al5pll.png")
+												label(for="p2")
+													h3 Select This Package
+												input(type="radio", name="packageType", id="p2", value="p2")
+										.package-contents
+											.alt
+												h3 ✓ 3 Tickets Per Guest For Any Attraction
+											.reg
+												h3 ✓ Two Plates of Snacks Per Guest from the Snack Bar
+											.alt 
+												h2 Price: $25 Per Guest
+							.col-sm-3
+								.package-container
+								
+									.package
+										if p3
+											.package-heading(style="background-color: #e74c3c;") 
+												h3 Inspire Package Is Not Available For This Day
+												img.circle-package-icon(src="http://res.cloudinary.com/fblaexhilarate/image/upload/c_scale,w_300/v1482003086/2_nnpho4.png")
+										else
+											.package-heading
+												h1 Inspire Package
+												img.circle-package-icon(src="http://res.cloudinary.com/fblaexhilarate/image/upload/c_scale,w_300/v1482003086/2_nnpho4.png")
+												label(for="p3")
+													h3 Select This Package
+												input(type="radio", name="packageType", id="p3", value="p3")
+										.package-contents
+											.alt
+												h3 ✓ 4 Tickets Per Guest For Any Attraction
+											.reg
+												h3 ✓ Custom Hand Selected Meal Prepared by Onsite Chef
+											.alt 
+												h2 Price: $30 Per Guest
+					.row(style="margin-top: 50px;")
+						.col-sm-8
+							input(type='hidden', name='action', value='contact')
+							input(type='hidden', name='date', value=formData.date)
+							.form-group(class=validationErrors.name ? 'has-error' : null)
+								label.col-sm-2.text-left.control-label Name
+								.col-sm-10
+									input(type='text' name='name.full' value=formData['name.full'] required placeholder="First Last").form-control
+							.form-group(class=validationErrors.email ? 'has-error' : null)
+								label.col-sm-2.control-label Email
+								.col-sm-10
+									input(type='email' name='email' value=formData.email required placeholder="name@domain.com").form-control
+							.form-group
+								label.col-sm-2.control-label Phone
+								.col-sm-10
+									input(type='text' name='phone' value=formData.phone placeholder='(optional)').form-control
+							.form-group(class=validationErrors.message ? 'has-error' : null)
+								label.col-sm-2.control-label Message
+								.col-sm-10
+									textarea(name='message' placeholder='Leave us a message...' rows=4 required).form-control= formData.message
+							.form-group
+								.col-sm-10.col-sm-offset-2
+									button(type='submit').btn.btn-primary Submit

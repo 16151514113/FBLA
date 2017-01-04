@@ -1,0 +1,17 @@
+extends ../layouts/default
+block content
+	+coverPhoto(Page)
+	.container
+		.row(style="display: inherit; padding: 8px;")
+			.col-md-6(style="padding: 20px; border-right: 1px dashed black;")
+				h1(style="padding: 5px;") About The Company
+				p(style="margin-top: 25px;") EXHILARATE was founded in November of 2016 by Poonam and Pavan Agrawal. The brother-sister duo saw a vision for a family entertainment center that could serve as a weekend getaway for the whole family- a place where a family could experience both the thrills of summer and winter while going on the adventure of a lifetime. 
+				br
+				p This Family Entertainment Center is the first of its kind. There is no other place that guarantees the family fun and enjoyment like EXHILARATE! Come jump in and join the adventure- just don't forget to take lots of pictures for your memories!
+			.col-md-6(style="padding: 20px;")
+				h1(style="padding: 5px;") Where We Are Located
+				p(style="margin-top: 25px;") This world of fun is located in Pasadena, Texas, catering to the cities of Houston, Galveston, Sugarland, Katy, and the Woodlands. 
+				br
+				p Everything's bigger in Texas!
+				.map-container(style="width: 100%; overflow: hidden;")
+					iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.208022133989!2d-95.17055174974843!3d29.655737381937218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864098e8c305e575%3A0xe2e3bdcd4b8d9263!2s3702+Lily+St%2C+Pasadena%2C+TX+77505!5e0!3m2!1sen!2sus!4v1482263151092', width='400', height='450', frameborder='0', style='border:0', allowfullscreen='')

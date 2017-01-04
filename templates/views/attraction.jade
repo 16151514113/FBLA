@@ -1,0 +1,9 @@
+extends ../layouts/default.jade
+include ../mixins/attraction
+block content
+    if !attraction
+      .jumbotron.text-center
+        h2 Invalid post...
+        p.lead Please check the url and try again
+    else
+      +attractiona(attraction)

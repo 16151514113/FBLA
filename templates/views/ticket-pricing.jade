@@ -1,0 +1,42 @@
+extends ../layouts/default
+block content
+	.cover-photo-container
+		+coverPhoto(Page)
+	.container
+		.row(style="padding: 20px;")
+			.col-md-4
+				.ticket-container
+					.ticket
+						.ticket-heading
+							h1 Superband
+						.ticket-contents
+							.alt
+								h3 ✓ One Day Pass
+							.reg
+								h3 ✓ Includes All Attractions
+							.alt
+								h2 Price: 
+								h2 Child (10 and below)- $50
+								h2 Adult- $60
+			.col-md-4
+				.ticket-container
+					.ticket 
+						.ticket-heading
+							h1 Megaband
+						.ticket-contents
+							.alt
+								h3 ✓ Two Day Pass
+							.reg
+								h3 ✓ Includes All Attractions
+							.alt
+								h3 ✓ Includes Free $5 Food Credit
+							.reg 
+								h3 ✓ 20% Off Your Stay at Exhilarate Hotels and Resorts
+							.alt 
+								h3 ✓ Complimentary Shuttle to Airport
+							.reg 
+								h2 Price:
+								h2 Child (10 and below)- $90
+								h2 Adult- $100
+		.row
+			div.alert.alert-info Each attraction has an individual single-ticket price. They are listed on each attraction page!

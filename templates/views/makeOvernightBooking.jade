@@ -1,0 +1,38 @@
+extends ../layouts/default
+block content
+	.container-fluid
+		.hero
+			img.hero-image(src="http://res.cloudinary.com/fblaexhilarate/image/upload/c_fit,f_auto,h_1500,w_1500/v1481688410/qt8uvf0mu5ekcussh3er.jpg")
+			.hero-content.hero-content-page
+				h1 - Overnight Booking -
+	.container
+		if enquirySubmitted
+			.jumbotron.text-center#content
+				h3 Success! We will call/email you to process your reservation and payment, thanks!
+		else
+			.row#content(style="margin-top: 50px; padding: 25px;")
+				+flash-messages(messages)
+				div.alert.alert-info You will be called in 1-2 business days to process your payment. 
+				.col-sm-8
+					form(method='post').form-horizontal
+						input(type='hidden', name='action', value='hotelreservation')
+						input(type='hidden', name='date', value=formData.date)
+						.form-group(class=validationErrors.name ? 'has-error' : null)
+							label.col-sm-2.text-left.control-label Name
+							.col-sm-10
+								input(type='text' name='name.full' value=formData['name.full'] required placeholder="First Last").form-control
+						.form-group(class=validationErrors.email ? 'has-error' : null)
+							label.col-sm-2.control-label Email
+							.col-sm-10
+								input(type='email' name='email' value=formData.email required placeholder="name@domain.com").form-control
+						.form-group
+							label.col-sm-2.control-label Phone
+							.col-sm-10
+								input(type='text' name='phone' value=formData.phone placeholder='(optional)').form-control
+						.form-group
+							label.col-sm-2.control-label Number of Rooms
+							.col-sm-10
+								input(type='text' name='qty' value=formData.qty placeholder='(optional)').form-control
+						.form-group
+							.col-sm-10.col-sm-offset-2
+								button(type='submit').btn.btn-primary Submit

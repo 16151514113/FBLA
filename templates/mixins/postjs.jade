@@ -1,0 +1,14 @@
+mixin postjs(post) 
+	script
+		$(document).ready(function(){
+		$('##{post.id}').css('opacity', 0);
+		$('##{post.id}').waypoint(function() {
+		$('##{post.id}').addClass('fadeIn#{post.leftOrRight}');
+		}, { offset: '80%' });
+		});
+		$(document).ready(function(){
+		$('##{post.id}img').css('opacity', 0);
+		$('##{post.id}img').waypoint(function() {
+		$('##{post.id}img').addClass('fadeInUp');
+		}, { offset: '80%' });
+		});

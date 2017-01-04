@@ -1,0 +1,6 @@
+mixin coverPhoto(page)
+	.container-fluid
+		.hero
+			img.hero-image(src=page._.coverPhoto.fit(1500,1500))
+			.hero-content.hero-content-page
+				h1="- " + page.title + " -"

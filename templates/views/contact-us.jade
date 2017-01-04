@@ -1,0 +1,35 @@
+extends ../layouts/default
+block content
+	+coverPhoto(Page)
+	.container
+		.col-md-6
+			.contact-container(style="margin-left: auto; margin-right: auto; margin-top: 50px; text-align: center;")
+				.row
+					h2 CONTACT US
+				.row
+					h4 3702 Lily Street
+				.row
+					h4 Pasadena, Texas 77505
+				.row
+					h4 (832) 513-8680
+				.row
+					a(href="MAILTO:joinexhilarate@gmail.com") Email us at joinexhilarate@gmail.com
+				.socialinkscontainer
+					br
+					.row(style="justify-content: center;")
+							i.fa.fa-facebook-f.fa-3x 
+							a(href="https://facebook.com/exhilarateworld")
+								h4(style="margin: 10px;") Facebook
+					br
+					.row(style="justify-content: center;")
+							i.fa.fa-twitter.fa-3x 
+							a(href="https://twitter.com/exhilarateworld")
+								h4(style="margin: 10px;")  Twitter
+					br
+					.row(style="justify-content: center;")
+							i.fa.fa-instagram.fa-3x 
+							a(href="https://instagram.com/exhilarateworld")
+								h4(style="margin: 10px;")  Instagram
+		.col-md-6
+			.map-container(style="width: 100%; overflow: hidden;")
+				iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.208022133989!2d-95.17055174974843!3d29.655737381937218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864098e8c305e575%3A0xe2e3bdcd4b8d9263!2s3702+Lily+St%2C+Pasadena%2C+TX+77505!5e0!3m2!1sen!2sus!4v1482263151092', width='600', height='450', frameborder='0', style='border:0', allowfullscreen='')

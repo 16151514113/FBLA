@@ -1,0 +1,21 @@
+mixin price(tier, price)
+	h3(style="font-weight: 700;")=tier
+		span.label.label-primary(style="margin: 9px;")=price
+mixin attraction(megaBandPrice, superBandPrice, childPrice, adultPrice, attractionName, attractionDescription)
+	.col-md-6
+		.circle-bound
+			.circle
+				.bound-text
+					h2(style="font-weight: 900; font-style: italic;")=attractionName
+					hr(style="width: 78%;")
+					p(style="font-size: 1.65em;")=attractionDescription
+					+price('Megaband Price:', megaBandPrice)
+					+price('Superband Price:', superBandPrice)
+					+price('Child Price:', childPrice)
+					+price('Adult Price:', adultPrice)
+mixin ticket(name, price, description)
+	.panel.panel-default
+		.panel-heading
+			h3.panel-title(style="font-weight: 700;")=name
+				span.label.label-primary(style="margin: 9px;")=price
+		.panel-body=description
